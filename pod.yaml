@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: django
+  name: django
+  namespace: default
+spec:
+  containers:
+  - name: django
+    image: django-sample
+    imagePullPolicy: Never # only for local testing, should be removed for production
+    ports:
+    - containerPort: 8000
+      protocol: TCP
